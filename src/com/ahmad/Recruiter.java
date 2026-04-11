@@ -30,13 +30,20 @@ public class Recruiter extends User{
         this.companyName = companyName;
     }
 
-
     public ArrayList<String> getJobPostings(){
         return jobPostings;
     }
 
+    // Erases the old list and sets a brand new one
     public void setJobPostings(String... jobs){
         this.jobPostings = new ArrayList<>(Arrays.asList(jobs));
+    }
+
+    // Appends multiple new jobs without erasing the old ones
+    public void addJobPostings(String... newJobs) {
+        if (this.jobPostings != null) {
+            this.jobPostings.addAll(Arrays.asList(newJobs));
+        }
     }
 
     @Override
