@@ -18,5 +18,16 @@ public class Main {
         Recruiter amit = new Recruiter("Amit", "amit@gmail.com", "Amit123$", "Google", "Software Engineer");
         amit.addJobPostings("Data Engineer", "Data Analyst");
         System.out.println("\n"+ amit);
+
+        User loggedInUser = new Student("Ahmad", "ahmad@gmail.com", "pass123", 8.5);
+
+// This is how real backend routers work!
+        if (loggedInUser instanceof Student) {
+            System.out.println("Routing to Student Portal...");
+        } else if (loggedInUser instanceof Recruiter) {
+            System.out.println("Routing to HR Dashboard...");
+        }
+
+        System.out.println(loggedInUser.getClass().getSimpleName());
     }
 }
