@@ -23,4 +23,8 @@ public abstract class BaseEntity {
     public ZonedDateTime getCreatedAt() {
         return createdAt;
     }
+
+    public interface SecurityProtocol {
+        void encryptData();
+    }
 }

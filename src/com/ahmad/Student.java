@@ -1,6 +1,6 @@
 package com.ahmad;
 
-public class Student extends User{
+public class Student extends User implements Auditable, Exportable{
     private double cgpa;
     private String resumeLink;
 
@@ -45,5 +45,15 @@ public class Student extends User{
     @Override
     public String getDashboardUrl(){
         return "/student/dashboard";
+    }
+
+    @Override
+    public void logActivity(String activity){
+        System.out.println(activity + ": added resume link...");
+    }
+
+    @Override
+    public void downloadProfile(String profile){
+        System.out.println(profile + "summary");
     }
 }

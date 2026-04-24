@@ -2,7 +2,7 @@ package com.ahmad;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Recruiter extends User implements Auditable{
+public class Recruiter extends User implements Auditable, BaseEntity.SecurityProtocol{
     private String companyName;
     private ArrayList<String> jobPostings;
 
@@ -54,5 +54,9 @@ public class Recruiter extends User implements Auditable{
     @Override
     public void logActivity(String activity) {
         System.out.println("Recruiter " + this.getName() + " performed: " + activity);
+    }
+
+    public void encryptData(){
+        System.out.println("Encrypting company data...");
     }
 }

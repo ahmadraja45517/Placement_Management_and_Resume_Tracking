@@ -31,5 +31,12 @@ public class Main {
         System.out.println(loggedInUser.getClass().getSimpleName());
 
         amit.logActivity("posted 3 new jobs");
+        ahmad.logActivity("9.5");
+        ahmad.downloadProfile("Good Student");
+        ahmad.formatToPDF();
+
+        Exportable.showExportRules();
+
+        amit.encryptData();
     }
 }
