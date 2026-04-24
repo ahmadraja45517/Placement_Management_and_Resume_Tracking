@@ -29,5 +29,7 @@ public class Main {
         }
 
         System.out.println(loggedInUser.getClass().getSimpleName());
+
+        amit.logActivity("posted 3 new jobs");
     }
 }

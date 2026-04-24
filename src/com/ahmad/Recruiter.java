@@ -2,7 +2,7 @@ package com.ahmad;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Recruiter extends User{
+public class Recruiter extends User implements Auditable{
     private String companyName;
     private ArrayList<String> jobPostings;
 
@@ -49,5 +49,10 @@ public class Recruiter extends User{
     @Override
     public String getDashboardUrl(){
         return "/company/dashboard";
+    }
+
+    @Override
+    public void logActivity(String activity) {
+        System.out.println("Recruiter " + this.getName() + " performed: " + activity);
     }
 }
