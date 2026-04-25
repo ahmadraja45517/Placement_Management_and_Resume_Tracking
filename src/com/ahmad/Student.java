@@ -4,7 +4,7 @@ public class Student extends User implements Auditable, Exportable{
     private double cgpa;
     private String resumeLink;
 
-    public Student(String name, String email, String password, double cgpa, String... resumeLink){
+    public Student(String name, String email, String password, double cgpa, String... resumeLink) throws InvalidCGPAException{
         super(name, email, password);
         setCgpa(cgpa);
         if (resumeLink.length > 0) {
@@ -26,11 +26,11 @@ public class Student extends User implements Auditable, Exportable{
         return cgpa;
     }
 
-    public void setCgpa(double cgpa){
+    public void setCgpa(double cgpa) throws InvalidCGPAException{
         if(cgpa >= 0 && cgpa <= 10){
             this.cgpa = cgpa;
         }else{
-            System.out.println("Enter the valid CGPA!");
+            throw new InvalidCGPAException("CGPA must be between 0 and 10");
         }
     }
 
