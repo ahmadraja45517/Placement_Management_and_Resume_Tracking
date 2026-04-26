@@ -3,6 +3,7 @@ package com.ahmad;
 public class Student extends User implements Auditable, Exportable{
     private double cgpa;
     private String resumeLink;
+    private ApplicationStatus status;
 
     public Student(String name, String email, String password, double cgpa, String... resumeLink) throws InvalidCGPAException{
         super(name, email, password);
@@ -10,6 +11,7 @@ public class Student extends User implements Auditable, Exportable{
         if (resumeLink.length > 0) {
             this.resumeLink = resumeLink[0];
         }
+        this.status = ApplicationStatus.PENDING;
     }
 
     @Override
@@ -40,6 +42,14 @@ public class Student extends User implements Auditable, Exportable{
 
     public void setResumeLink(String resumeLink){
         this.resumeLink = resumeLink;
+    }
+
+    public ApplicationStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ApplicationStatus status) {
+        this.status = status;
     }
 
     @Override

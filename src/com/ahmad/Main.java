@@ -5,9 +5,10 @@ public class Main {
     public static void main(String[] args) throws InvalidCGPAException {
 
         try {
-            Student ahmad = new Student("Ahmad", "ahmad@gmail.com", "pass", 11.5);
+            Student ahmad = new Student("Ahmad", "ahmad@gmail.com", "pass", 9.5);
             ahmad.setResumeLink("www.ahmadportfolio.com");
             System.out.println(ahmad);
+            System.out.println(ahmad.getStatus());
             System.out.println(ahmad.getId());
             System.out.println(ahmad.getCreatedAt());
 
